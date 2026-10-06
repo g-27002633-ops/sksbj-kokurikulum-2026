@@ -1,274 +1,74 @@
 <!doctype html>
 <html lang="ms">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#031225">
-<title>Pelaporan Kokurikulum SK Seri Binjai 2026</title>
-<style>
-*{box-sizing:border-box}
-html,body{margin:0;background:#031225;color:#fff;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
-body{overflow-x:hidden}
-a{color:inherit}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#041328">
+  <title>Pelaporan Kokurikulum SKSBJ 2026</title>
+  <style>
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:#031225;color:#fff;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+    body{min-height:100vh;overflow-x:hidden;background:
+      radial-gradient(circle at 30% 0%, rgba(0,183,255,.16), transparent 30rem),
+      radial-gradient(circle at 90% 20%, rgba(255,176,0,.08), transparent 22rem),
+      #031225;}
+    .wrap{max-width:1800px;margin:0 auto;padding:0}
+    .stage{position:relative;width:100%;margin:0 auto}
+    .stage img{display:block;width:100%;height:auto}
+    .hotspot{
+      position:absolute;
+      display:block;
+      border-radius:999px;
+      text-decoration:none;
+      -webkit-tap-highlight-color:transparent;
+      outline:none;
+    }
+    .hotspot:focus-visible{outline:3px solid #fff;outline-offset:3px}
+    /* Desktop hotspot positions based on the final banner */
+    .desktop{display:block}
+    .mobile{display:none}
+    .desktop .sukan{left:2.1%; top:80.6%; width:25.1%; height:8.2%}
+    .desktop .kelab{left:35.6%; top:80.8%; width:28.8%; height:8.1%}
+    .desktop .uniform{left:68.1%; top:80.5%; width:28.3%; height:8.4%}
 
-.desktop-stage{
-  position:relative;
-  width:100%;
-  max-width:1800px;
-  margin:0 auto;
-  aspect-ratio:1672/941;
-  background:url('assets/desktop-master.jpg') center/cover no-repeat;
-  overflow:hidden;
-  box-shadow:0 25px 80px rgba(0,0,0,.45);
-}
-.header-badge{
-  position:absolute; top:0; left:0;
-  width:min(29%, 500px); z-index:5; pointer-events:none;
-  filter:drop-shadow(0 6px 18px rgba(0,0,0,.35));
-}
-.header-badge img{width:100%;height:auto;display:block}
+    /* Mobile: use the same artwork full width, with resized hotspots */
+    .mobile .sukan{left:4.8%; top:80.7%; width:25.3%; height:8.3%}
+    .mobile .kelab{left:36.0%; top:80.8%; width:28.9%; height:8.2%}
+    .mobile .uniform{left:68.0%; top:80.5%; width:28.4%; height:8.5%}
 
-.hot{
-  position:absolute; bottom:4.6%; transform:translateX(-50%);
-  text-decoration:none; font-weight:950; letter-spacing:.04em;
-  font-size:clamp(.8rem,1.1vw,1.15rem);
-  padding:.85em 1.65em; min-width:14%; text-align:center;
-  border-radius:999px; backdrop-filter:blur(10px);
-  border:1px solid rgba(255,255,255,.65);
-  box-shadow:0 0 28px var(--glow), inset 0 1px rgba(255,255,255,.35);
-  transition:.2s ease; z-index:4;
-}
-.hot:hover{transform:translateX(-50%) translateY(-3px) scale(1.03)}
-.hot::after{content:"  →";font-weight:900}
-.hot.sukan{left:16.6%;background:linear-gradient(180deg,#09aefe,#0060e8);--glow:#00b7ff}
-.hot.kelab{left:49.8%;background:linear-gradient(180deg,#ff2fd2,#8e0cc7);--glow:#ff24c8}
-.hot.uniform{left:82.7%;background:linear-gradient(180deg,#ffc21f,#d56a00);--glow:#ffb000}
+    footer{
+      text-align:center;
+      color:#7c92ad;
+      font-size:.75rem;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      padding:18px 12px 24px;
+    }
 
-/* MOBILE: show the original artwork COMPLETELY, no crop */
-.mobile-wrap{display:none;background:#020b16}
-.mobile-hero{
-  position:relative;
-  width:100%;
-  overflow:hidden;
-  background:#031225;
-}
-.mobile-hero img{
-  width:100%;
-  height:auto;
-  display:block;
-}
-.mobile-card{
-  position:relative;
-  width:100%;
-  margin:0;
-  background:#020b16;
-  overflow:hidden;
-  border-top:1px solid rgba(255,255,255,.08);
-}
-.mobile-card > img{
-  width:100%;
-  height:auto;
-  display:block;
-}
-/* Invisible but large clickable areas over the original BUKA PORTAL buttons */
-.tap{
-  position:absolute;
-  z-index:3;
-  display:block;
-  border-radius:999px;
-  -webkit-tap-highlight-color:transparent;
-}
-.tap:focus-visible{
-  outline:3px solid #fff;
-  outline-offset:3px;
-}
-/* coordinates relative to each original 4:3 artwork */
-.tap-sukan{left:62%;top:77%;width:33%;height:12%}
-.tap-kelab{left:4%;top:66%;width:34%;height:13%}
-.tap-uniform{left:59%;top:55%;width:32%;height:12%}
-
-.mobile-note{
-  text-align:center;
-  padding:12px 14px 18px;
-  color:#8ea6c0;
-  font-size:.72rem;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-}
-footer{
-  text-align:center;padding:20px;color:#8197b0;
-  font-size:.72rem;letter-spacing:.2em;text-transform:uppercase
-}
-
-@media (max-width:780px){
-  .desktop-stage{display:none}
-  .mobile-wrap{display:block}
-  footer{display:none}
-}
-@media (min-width:781px){
-  .mobile-wrap{display:none}
-}
-
-.school-brand{
-  position:absolute;
-  top:2.3%;
-  left:4.6%;
-  z-index:8;
-  display:flex;
-  align-items:center;
-  gap:14px;
-  pointer-events:none;
-}
-.school-brand img{
-  width:clamp(62px,6.2vw,112px);
-  height:auto;
-  display:block;
-  object-fit:contain;
-  filter:drop-shadow(0 5px 12px rgba(0,0,0,.38));
-}
-.school-brand-text{
-  display:flex;
-  flex-direction:column;
-  padding-left:14px;
-  border-left:3px solid #f4bd23;
-  text-shadow:0 3px 10px rgba(0,0,0,.55);
-}
-.school-brand-text strong{
-  font-size:clamp(1rem,1.8vw,2rem);
-  line-height:1;
-  letter-spacing:.01em;
-}
-.school-brand-text span{
-  margin-top:7px;
-  font-size:clamp(.58rem,.85vw,1rem);
-  letter-spacing:.28em;
-}
-
-.mobile-brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding:12px 14px;
-  background:#06152a;
-  border-bottom:1px solid rgba(255,255,255,.08);
-}
-.mobile-brand img{
-  width:58px;
-  height:auto;
-  object-fit:contain;
-  flex:0 0 auto;
-}
-.mobile-brand-text{
-  display:flex;
-  flex-direction:column;
-  padding-left:11px;
-  border-left:2px solid #f4bd23;
-}
-.mobile-brand-text strong{
-  font-size:1rem;
-  line-height:1;
-}
-.mobile-brand-text span{
-  margin-top:5px;
-  font-size:.63rem;
-  letter-spacing:.22em;
-  color:#d4dfeb;
-}
-
-
-.brand-mask{
-  position:absolute;
-  top:0;
-  left:0;
-  width:35%;
-  height:23%;
-  z-index:6;
-  background:
-    linear-gradient(180deg, rgba(3,18,37,.98), rgba(3,18,37,.88)),
-    linear-gradient(90deg, rgba(4,14,28,.96) 0%, rgba(4,14,28,.88) 70%, rgba(4,14,28,.0) 100%);
-  clip-path: polygon(0 0, 100% 0, 94% 76%, 0 76%);
-  box-shadow: 0 6px 16px rgba(0,0,0,.18);
-  pointer-events:none;
-}
-
-.mobile-hero-mask{
-  position:absolute;
-  top:0;
-  left:0;
-  width:43%;
-  height:34%;
-  z-index:2;
-  background:
-    linear-gradient(180deg, rgba(3,18,37,.98), rgba(3,18,37,.90)),
-    linear-gradient(90deg, rgba(3,18,37,.96) 0%, rgba(3,18,37,.15) 100%);
-  clip-path: polygon(0 0, 100% 0, 86% 86%, 0 86%);
-  pointer-events:none;
-}
-.mobile-hero img{
-  position:relative;
-  z-index:1;
-}
-.school-brand{z-index:8}
-.mobile-brand{position:relative;z-index:4}
-
-</style>
+    @media (max-width: 900px){
+      .desktop{display:none}
+      .mobile{display:block}
+      footer{font-size:.68rem}
+    }
+  </style>
 </head>
 <body>
+  <main class="wrap">
+    <section class="stage desktop" aria-label="Portal Pelaporan Kokurikulum SKSBJ 2026">
+      <img src="assets/portal-banner.jpg" alt="Pelaporan Kokurikulum SKSBJ 2026">
+      <a class="hotspot sukan" href="https://script.google.com/macros/s/AKfycbw44zmumY3SuJcRVjWst9u9KVtTkVXJdgMmurOPeB3D1i06i5fhSab0G_lveYHdy58g/exec" target="_blank" rel="noopener" aria-label="Buka portal Sukan dan Permainan"></a>
+      <a class="hotspot kelab" href="https://script.google.com/macros/s/AKfycbxFC-WBAX5i4An0_vc890VHEd5xaTMSa_-Yofiu3u2h9HJP4sKSOJeuVs-w_2YGfmMS/exec" target="_blank" rel="noopener" aria-label="Buka portal Kelab dan Persatuan"></a>
+      <a class="hotspot uniform" href="https://script.google.com/macros/s/AKfycbwiCWI6RNphgxjncSKWqwwhjjLZJc-UFserR9wbj3_lFvIzFMZr_Ist9MYE6bW-GkSiAg/exec" target="_blank" rel="noopener" aria-label="Buka portal Badan Beruniform"></a>
+    </section>
 
-<section class="desktop-stage" aria-label="Portal Pelaporan Kokurikulum">
-  <div class="brand-mask" aria-hidden="true"></div>
-  <div class="school-brand">
-    <img src="assets/logo-sksbj.png" alt="Lambang SK Seri Binjai">
-    <div class="school-brand-text">
-      <strong>SK SERI BINJAI</strong>
-      <span>BATU PAHAT</span>
-    </div>
-  </div>
-  <a class="hot sukan" href="https://script.google.com/macros/s/AKfycbw44zmumY3SuJcRVjWst9u9KVtTkVXJdgMmurOPeB3D1i06i5fhSab0G_lveYHdy58g/exec" target="_blank" rel="noopener">BUKA PORTAL</a>
-  <a class="hot kelab" href="https://script.google.com/macros/s/AKfycbxFC-WBAX5i4An0_vc890VHEd5xaTMSa_-Yofiu3u2h9HJP4sKSOJeuVs-w_2YGfmMS/exec" target="_blank" rel="noopener">BUKA PORTAL</a>
-  <a class="hot uniform" href="https://script.google.com/macros/s/AKfycbwiCWI6RNphgxjncSKWqwwhjjLZJc-UFserR9wbj3_lFvIzFMZr_Ist9MYE6bW-GkSiAg/exec" target="_blank" rel="noopener">BUKA PORTAL</a>
-</section>
+    <section class="stage mobile" aria-label="Portal Pelaporan Kokurikulum SKSBJ 2026 Mobile">
+      <img src="assets/portal-banner-mobile.jpg" alt="Pelaporan Kokurikulum SKSBJ 2026">
+      <a class="hotspot sukan" href="https://script.google.com/macros/s/AKfycbw44zmumY3SuJcRVjWst9u9KVtTkVXJdgMmurOPeB3D1i06i5fhSab0G_lveYHdy58g/exec" target="_blank" rel="noopener" aria-label="Buka portal Sukan dan Permainan"></a>
+      <a class="hotspot kelab" href="https://script.google.com/macros/s/AKfycbxFC-WBAX5i4An0_vc890VHEd5xaTMSa_-Yofiu3u2h9HJP4sKSOJeuVs-w_2YGfmMS/exec" target="_blank" rel="noopener" aria-label="Buka portal Kelab dan Persatuan"></a>
+      <a class="hotspot uniform" href="https://script.google.com/macros/s/AKfycbwiCWI6RNphgxjncSKWqwwhjjLZJc-UFserR9wbj3_lFvIzFMZr_Ist9MYE6bW-GkSiAg/exec" target="_blank" rel="noopener" aria-label="Buka portal Badan Beruniform"></a>
+    </section>
 
-<main class="mobile-wrap">
-  <div class="mobile-brand">
-    <img src="assets/logo-sksbj.png" alt="Lambang SK Seri Binjai">
-    <div class="mobile-brand-text">
-      <strong>SK SERI BINJAI</strong>
-      <span>BATU PAHAT</span>
-    </div>
-  </div>
-  <section class="mobile-hero">
-    <div class="mobile-hero-mask" aria-hidden="true"></div>
-    <img src="assets/desktop-master.jpg" alt="Pelaporan Kokurikulum SK Seri Binjai 2026">
-  </section>
-
-  <section class="mobile-card">
-    <img src="assets/sukan.jpg" alt="Sukan dan Permainan">
-    <a class="tap tap-sukan"
-       aria-label="Buka portal Sukan dan Permainan"
-       href="https://script.google.com/macros/s/AKfycbw44zmumY3SuJcRVjWst9u9KVtTkVXJdgMmurOPeB3D1i06i5fhSab0G_lveYHdy58g/exec"
-       target="_blank" rel="noopener"></a>
-  </section>
-
-  <section class="mobile-card">
-    <img src="assets/kelab.jpg" alt="Kelab dan Persatuan">
-    <a class="tap tap-kelab"
-       aria-label="Buka portal Kelab dan Persatuan"
-       href="https://script.google.com/macros/s/AKfycbxFC-WBAX5i4An0_vc890VHEd5xaTMSa_-Yofiu3u2h9HJP4sKSOJeuVs-w_2YGfmMS/exec"
-       target="_blank" rel="noopener"></a>
-  </section>
-
-  <section class="mobile-card">
-    <img src="assets/uniform.jpg" alt="Badan Beruniform">
-    <a class="tap tap-uniform"
-       aria-label="Buka portal Badan Beruniform"
-       href="https://script.google.com/macros/s/AKfycbwiCWI6RNphgxjncSKWqwwhjjLZJc-UFserR9wbj3_lFvIzFMZr_Ist9MYE6bW-GkSiAg/exec"
-       target="_blank" rel="noopener"></a>
-  </section>
-
-  <div class="mobile-note">SK Seri Binjai · Batu Pahat · 2026</div>
-</main>
-
-<footer>SK SERI BINJAI · BATU PAHAT · 2026</footer>
+    <footer>SK SERI BINJAI · BATU PAHAT · 2026</footer>
+  </main>
 </body>
 </html>

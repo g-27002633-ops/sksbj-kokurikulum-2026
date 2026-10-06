@@ -108,18 +108,98 @@ footer{
 @media (min-width:781px){
   .mobile-wrap{display:none}
 }
+
+.school-brand{
+  position:absolute;
+  top:2.3%;
+  left:4.6%;
+  z-index:8;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  pointer-events:none;
+}
+.school-brand img{
+  width:clamp(62px,6.2vw,112px);
+  height:auto;
+  display:block;
+  object-fit:contain;
+  filter:drop-shadow(0 5px 12px rgba(0,0,0,.38));
+}
+.school-brand-text{
+  display:flex;
+  flex-direction:column;
+  padding-left:14px;
+  border-left:3px solid #f4bd23;
+  text-shadow:0 3px 10px rgba(0,0,0,.55);
+}
+.school-brand-text strong{
+  font-size:clamp(1rem,1.8vw,2rem);
+  line-height:1;
+  letter-spacing:.01em;
+}
+.school-brand-text span{
+  margin-top:7px;
+  font-size:clamp(.58rem,.85vw,1rem);
+  letter-spacing:.28em;
+}
+
+.mobile-brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px 14px;
+  background:#06152a;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.mobile-brand img{
+  width:58px;
+  height:auto;
+  object-fit:contain;
+  flex:0 0 auto;
+}
+.mobile-brand-text{
+  display:flex;
+  flex-direction:column;
+  padding-left:11px;
+  border-left:2px solid #f4bd23;
+}
+.mobile-brand-text strong{
+  font-size:1rem;
+  line-height:1;
+}
+.mobile-brand-text span{
+  margin-top:5px;
+  font-size:.63rem;
+  letter-spacing:.22em;
+  color:#d4dfeb;
+}
+
 </style>
 </head>
 <body>
 
 <section class="desktop-stage" aria-label="Portal Pelaporan Kokurikulum">
-  <div class="header-badge"><img src="assets/header-badge.png" alt="SK Seri Binjai Batu Pahat"></div>
+  <div class="school-brand">
+    <img src="assets/logo-sksbj.png" alt="Lambang SK Seri Binjai">
+    <div class="school-brand-text">
+      <strong>SK SERI BINJAI</strong>
+      <span>BATU PAHAT</span>
+    </div>
+  </div>
   <a class="hot sukan" href="https://script.google.com/macros/s/AKfycbw44zmumY3SuJcRVjWst9u9KVtTkVXJdgMmurOPeB3D1i06i5fhSab0G_lveYHdy58g/exec" target="_blank" rel="noopener">BUKA PORTAL</a>
   <a class="hot kelab" href="https://script.google.com/macros/s/AKfycbxFC-WBAX5i4An0_vc890VHEd5xaTMSa_-Yofiu3u2h9HJP4sKSOJeuVs-w_2YGfmMS/exec" target="_blank" rel="noopener">BUKA PORTAL</a>
   <a class="hot uniform" href="https://script.google.com/macros/s/AKfycbwiCWI6RNphgxjncSKWqwwhjjLZJc-UFserR9wbj3_lFvIzFMZr_Ist9MYE6bW-GkSiAg/exec" target="_blank" rel="noopener">BUKA PORTAL</a>
 </section>
 
 <main class="mobile-wrap">
+  <div class="mobile-brand">
+    <img src="assets/logo-sksbj.png" alt="Lambang SK Seri Binjai">
+    <div class="mobile-brand-text">
+      <strong>SK SERI BINJAI</strong>
+      <span>BATU PAHAT</span>
+    </div>
+  </div>
   <section class="mobile-hero">
     <img src="assets/desktop-master.jpg" alt="Pelaporan Kokurikulum SK Seri Binjai 2026">
   </section>

@@ -175,11 +175,48 @@ footer{
   color:#d4dfeb;
 }
 
+
+.brand-mask{
+  position:absolute;
+  top:0;
+  left:0;
+  width:35%;
+  height:23%;
+  z-index:6;
+  background:
+    linear-gradient(180deg, rgba(3,18,37,.98), rgba(3,18,37,.88)),
+    linear-gradient(90deg, rgba(4,14,28,.96) 0%, rgba(4,14,28,.88) 70%, rgba(4,14,28,.0) 100%);
+  clip-path: polygon(0 0, 100% 0, 94% 76%, 0 76%);
+  box-shadow: 0 6px 16px rgba(0,0,0,.18);
+  pointer-events:none;
+}
+
+.mobile-hero-mask{
+  position:absolute;
+  top:0;
+  left:0;
+  width:43%;
+  height:34%;
+  z-index:2;
+  background:
+    linear-gradient(180deg, rgba(3,18,37,.98), rgba(3,18,37,.90)),
+    linear-gradient(90deg, rgba(3,18,37,.96) 0%, rgba(3,18,37,.15) 100%);
+  clip-path: polygon(0 0, 100% 0, 86% 86%, 0 86%);
+  pointer-events:none;
+}
+.mobile-hero img{
+  position:relative;
+  z-index:1;
+}
+.school-brand{z-index:8}
+.mobile-brand{position:relative;z-index:4}
+
 </style>
 </head>
 <body>
 
 <section class="desktop-stage" aria-label="Portal Pelaporan Kokurikulum">
+  <div class="brand-mask" aria-hidden="true"></div>
   <div class="school-brand">
     <img src="assets/logo-sksbj.png" alt="Lambang SK Seri Binjai">
     <div class="school-brand-text">
@@ -201,6 +238,7 @@ footer{
     </div>
   </div>
   <section class="mobile-hero">
+    <div class="mobile-hero-mask" aria-hidden="true"></div>
     <img src="assets/desktop-master.jpg" alt="Pelaporan Kokurikulum SK Seri Binjai 2026">
   </section>
 
